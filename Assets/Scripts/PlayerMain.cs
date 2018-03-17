@@ -18,15 +18,13 @@ public class PlayerMain : MonoBehaviour {
 
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    public void damage()
     {
-        Debug.Log("hELLO");
-    }
-
-    void damage()
-    {
+        Debug.Log("Hello");
         health -= 10;
-        if(health==0)
+        Debug.Log("" + health);
+
+        if (health<=0)
         {
             anim.SetTrigger("isDead");
         }

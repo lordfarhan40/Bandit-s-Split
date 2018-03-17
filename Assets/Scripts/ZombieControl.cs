@@ -13,9 +13,14 @@ public class ZombieControl : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnTriggerEnter(Collider other)
+    {
+        go.GetComponent<PlayerMain>().damage();
+    }
+
+    // Update is called once per frame
+    void Update () {
         if(Vector3.Distance(transform.position,go.transform.position)<3)
         {
             anim.SetBool("isNear", true);
