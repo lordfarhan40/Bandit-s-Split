@@ -7,10 +7,23 @@ public class PlayerMain : MonoBehaviour
     public static double health;
     public UnityEngine.UI.Slider slider;
     public static Animator anim;
+
+    bool isDead;
+
     void Start()
     {
+        isDead = false;
         anim = GetComponent<Animator>();
         health = 100.0;
+    }
+
+    public void Death()
+    {
+        if (isDead)
+            return;
+        anim.SetTrigger("isDead");
+        StartCoroutine("DieScreen");
+        isDead = true;
     }
 
     public void Damage()
@@ -20,10 +33,9 @@ public class PlayerMain : MonoBehaviour
         health -= 0.3;
         if (health < 0)
         {
-            anim.SetTrigger("isDead");
-            StartCoroutine("DieScreen");
+            Death();
         }
-        slider.value = ((float)health) / 100;
+        slider.value -=0.3f;
     }
 
     IEnumerator DieScreen()
