@@ -2,31 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMain : MonoBehaviour {
-
-
-    int health;
-    // Use this for initialization
-    Animator anim;
-	void Start () {
-        anim = GetComponent<Animator>();
-        health = 100;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
-
-    public void damage()
+public class PlayerMain : MonoBehaviour
+{
+    public static double health;
+    public UnityEngine.UI.Slider slider;
+    public static Animator anim;
+    void Start()
     {
-        Debug.Log("Hello");
-        health -= 10;
-        Debug.Log("" + health);
+        anim = GetComponent<Animator>();
+        health = 100.0;
+    }
 
-        if (health<=0)
+    public void Damage()
+    {
+        if (health < 0)
+            return;
+        health -= 0.3;
+        if (health < 0)
         {
             anim.SetTrigger("isDead");
+            StartCoroutine("DieScreen");
         }
+        slider.value = ((float)health) / 100;
+    }
+
+    IEnumerator DieScreen()
+    {
+        yield return new WaitForSeconds(3);
+
+        Application.LoadLevel(2);
     }
 }
