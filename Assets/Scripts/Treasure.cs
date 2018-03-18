@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Treasure : MonoBehaviour {
 
+    public UnityEngine.UI.Text text;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
+        text.GetComponent<Score>().ResetScore();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,7 +21,8 @@ public class Treasure : MonoBehaviour {
         Debug.Log("Hello");
         if(other.gameObject.name=="A03")
         {
-            Destroy(this);
+            text.GetComponent<Score>().UpScore();
+            Destroy(this.gameObject);
         }
     }
 }

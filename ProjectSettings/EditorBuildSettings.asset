@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/You Died.unity
     guid: 01f96d0279afdbc47b49056ba466cabd
+  - enabled: 1
+    path: Assets/YouWin.unity
+    guid: 31197a3ed02d6e04b9adc5217b3deab7

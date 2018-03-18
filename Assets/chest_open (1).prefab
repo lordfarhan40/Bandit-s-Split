@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 65933837745496312}
   - component: {fileID: 114299232700121992}
   - component: {fileID: 54891936689469384}
+  - component: {fileID: 114330860921462126}
   m_Layer: 0
   m_Name: chest_open (1)
   m_TagString: Untagged
@@ -94,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601094807809886}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -135.3, y: 0.20000008, z: 206.1}
+  m_LocalPosition: {x: -38.56, y: 0.20000008, z: 134.86719}
   m_LocalScale: {x: 2.0863543, y: 2.0863557, z: 2.0863557}
   m_Children:
   - {fileID: 4999035653450420}
@@ -390,6 +391,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d66557c72cf324c962c446337aff07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
+--- !u!114 &114330860921462126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601094807809886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3a944d75b28604db79c3a6579a1fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 0}
 --- !u!198 &198883943265452600
 ParticleSystem:
   m_ObjectHideFlags: 1

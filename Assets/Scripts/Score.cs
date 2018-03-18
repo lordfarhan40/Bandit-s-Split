@@ -1,16 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+public class Score : UnityEngine.MonoBehaviour
+{
 
-public class FinalScore : MonoBehaviour {
+    private static int FinalScore;
+    public Text text;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start()
+    {
+        text.text = "Score 0";
+    }
+
+    public void UpScore()
+    {
+        print("I am being called");
+        FinalScore += 10;
+        text.text = "Score " + FinalScore;
+        if(FinalScore==100)
+        {
+            Application.LoadLevel(3);
+        }
+    }
+
+    public int  GetScore()
+    {
+        return FinalScore;
+    }
+
+    public void ResetScore()
+    {
+        FinalScore = 0;
+        text.text = "Score " + FinalScore;
+    }
+
 }
