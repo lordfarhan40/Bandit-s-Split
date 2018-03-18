@@ -10,14 +10,14 @@ public class Score : UnityEngine.MonoBehaviour
 
     private void Start()
     {
-        text.text = "Score 0";
+        text.text = "0";
     }
 
     public void UpScore()
     {
         print("I am being called");
         FinalScore += 10;
-        text.text = "Score " + FinalScore;
+        text.text = "" + FinalScore;
         if(FinalScore==100)
         {
             Application.LoadLevel(3);
@@ -32,7 +32,7 @@ public class Score : UnityEngine.MonoBehaviour
     public void ResetScore()
     {
         FinalScore = 0;
-        text.text = "Score " + FinalScore;
+        text.text = "" + FinalScore;
     }
 
 }

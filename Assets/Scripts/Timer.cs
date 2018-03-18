@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         gameTimer=300;
+        nextActionTime = Time.time;
         anim = GetComponent<Animator>();
     }
 
@@ -28,15 +29,14 @@ public class Timer : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
             gameTimer--;
             gameTimer = 0 > gameTimer ? 0 : gameTimer;
-            print("Time: " + gameTimer);
-            GameTimer.text = "Time: " + gameTimer;
+            GameTimer.text = "" + gameTimer;
             if (gameTimer <= 0)
             {
                 diePlayer();
